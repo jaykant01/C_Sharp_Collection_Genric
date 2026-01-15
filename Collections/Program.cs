@@ -46,8 +46,12 @@ class Program
         // rotateElement.Rotate();
 
         // Problem 4
-        RemoveDuplicates removeDuplicates = new RemoveDuplicates();
-        removeDuplicates.Duplicate();
+        // RemoveDuplicates removeDuplicates = new RemoveDuplicates();
+        // removeDuplicates.Duplicate();
+
+        // Problem 5
+        NthElement nthElement = new NthElement();
+        nthElement.Element();
 
         Console.ReadKey();
                 
