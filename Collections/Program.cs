@@ -50,8 +50,16 @@ class Program
         // removeDuplicates.Duplicate();
 
         // Problem 5
-        NthElement nthElement = new NthElement();
-        nthElement.Element();
+        // NthElement nthElement = new NthElement();
+        // nthElement.Element();
+
+
+        // Set Interface
+
+        // Problem 1
+        CheckEqual checkEqual = new CheckEqual();
+        checkEqual.Equal();
+
 
         Console.ReadKey();
                 
