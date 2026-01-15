@@ -10,7 +10,6 @@ public class FindFrequency
         List<string> list = new List<string>() { "apple", "banana", "apple", "orange" };
         Dictionary<string, int> hm = new Dictionary<string, int>();
 
-        int count = 1;
         for(int i=0; i<list.Count; i++)
         {
             if (hm.ContainsKey(list[i]))
