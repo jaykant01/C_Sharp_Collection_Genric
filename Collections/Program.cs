@@ -38,8 +38,12 @@ class Program
         // }
 
         // Problem 2
-        FindFrequency findFrequency = new FindFrequency();
-        findFrequency.FindFreq();
+        // FindFrequency findFrequency = new FindFrequency();
+        // findFrequency.FindFreq();
+
+        // Problem 3
+        RotateElement rotateElement = new RotateElement();
+        rotateElement.Rotate();
 
         Console.ReadKey();
                 
