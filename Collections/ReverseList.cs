@@ -4,9 +4,9 @@ namespace Collections;
 
 public class ReverseList
 {
-    public void Reversee()
+    public void Reverse(ArrayList list)
     {
-        ArrayList list = new ArrayList() { 1, 2, 3, 4, 5 };
+        // original list
         foreach (var item in list)
         {
             Console.Write(item + " ");
@@ -14,9 +14,27 @@ public class ReverseList
         Console.WriteLine();
 
         // Without Built-in Method
-        for(int i=list.Count-1; i>=0; i--)
+        // for(int i=list.Count-1; i>=0; i--)
+        // {
+        //     System.Console.Write(list[i] + " ");
+        // }
+
+        // Without Built-in Method 2
+        int st = 0;
+        int en = list.Count - 1;
+        while (st < en)
         {
-            System.Console.Write(list[i] + " ");
+            var temp = list[st];
+            list[st] = list[en];
+            list[en] = temp;
+            st++;
+            en--;
+        }
+
+        // reversed list
+        foreach (var item in list)
+        {
+            Console.Write(item + " ");
         }
     }
 
