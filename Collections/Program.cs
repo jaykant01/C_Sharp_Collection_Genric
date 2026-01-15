@@ -42,8 +42,12 @@ class Program
         // findFrequency.FindFreq();
 
         // Problem 3
-        RotateElement rotateElement = new RotateElement();
-        rotateElement.Rotate();
+        // RotateElement rotateElement = new RotateElement();
+        // rotateElement.Rotate();
+
+        // Problem 4
+        RemoveDuplicates removeDuplicates = new RemoveDuplicates();
+        removeDuplicates.Duplicate();
 
         Console.ReadKey();
                 
