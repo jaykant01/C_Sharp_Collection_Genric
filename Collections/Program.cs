@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System.Collections.Generic;
+using System.Collections;
 namespace Collections;
 
 class Program
@@ -59,6 +60,19 @@ class Program
         // Problem 1
         //CheckEqual checkEqual = new CheckEqual();
         //checkEqual.Equal();
+
+
+
+        // Map Interface
+        WordFrequencyCounter counter = new WordFrequencyCounter();
+
+        Dictionary<string, int> result = counter.CountWords();
+
+        foreach (var item in result)
+        {
+            Console.WriteLine(item.Key + " : " + item.Value);
+        }
+
 
 
         // Insurance Policy
@@ -123,19 +137,19 @@ class Program
 
 
         // Problem Banking System
-        BankingSystem bank = new BankingSystem();
+        //BankingSystem bank = new BankingSystem();
 
-        bank.AddAccount(101, 5000);
-        bank.AddAccount(102, 12000);
-        bank.AddAccount(103, 3000);
+        //bank.AddAccount(101, 5000);
+        //bank.AddAccount(102, 12000);
+        //bank.AddAccount(103, 3000);
 
-        bank.RequestWithdrawal(101);
-        bank.RequestWithdrawal(103);
+        //bank.RequestWithdrawal(101);
+        //bank.RequestWithdrawal(103);
 
-        bank.ProcessWithdrawals();
-        Console.WriteLine();
+        //bank.ProcessWithdrawals();
+        //Console.WriteLine();
 
-        bank.ShowSortedByBalance();
+        //bank.ShowSortedByBalance();
 
 
         Console.ReadKey();
