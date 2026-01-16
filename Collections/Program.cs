@@ -108,17 +108,34 @@ class Program
         //Console.WriteLine();
         //voting.ShowSortedResults();
 
+
         // Problem Shopping Cart
-        ShoppingCart cart = new ShoppingCart();
+        //ShoppingCart cart = new ShoppingCart();
 
-        cart.AddProduct("Laptop", 55000);
-        cart.AddProduct("Mouse", 500);
-        cart.AddProduct("Keyboard", 1500);
-        cart.AddProduct("Headphones", 2500);
+        //cart.AddProduct("Laptop", 55000);
+        //cart.AddProduct("Mouse", 500);
+        //cart.AddProduct("Keyboard", 1500);
+        //cart.AddProduct("Headphones", 2500);
 
-        cart.ShowCart();
+        //cart.ShowCart();
+        //Console.WriteLine();
+        //cart.ShowSortedByPrice();
+
+
+        // Problem Banking System
+        BankingSystem bank = new BankingSystem();
+
+        bank.AddAccount(101, 5000);
+        bank.AddAccount(102, 12000);
+        bank.AddAccount(103, 3000);
+
+        bank.RequestWithdrawal(101);
+        bank.RequestWithdrawal(103);
+
+        bank.ProcessWithdrawals();
         Console.WriteLine();
-        cart.ShowSortedByPrice();
+
+        bank.ShowSortedByBalance();
 
 
         Console.ReadKey();
