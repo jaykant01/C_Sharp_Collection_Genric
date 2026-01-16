@@ -1,6 +1,7 @@
 ﻿using Online_Marketplace;
 using Course_Management;
 using Meal_Plan;
+using AI_Resume;
 class Program
 {
     static void Main(string[] args)
@@ -63,11 +64,38 @@ class Program
         // assignmentC.DisplayCourses();
 
         // Problem 4
-        var vegMeal = MealGenerator.GenerateMeal(new VegetarianMeal());
-        vegMeal.Display();
+        // var vegMeal = MealGenerator.GenerateMeal(new VegetarianMeal());
+        // vegMeal.Display();
 
-        var ketoMeal = MealGenerator.GenerateMeal(new VeganMeal());
-        ketoMeal.Display();
+        // var ketoMeal = MealGenerator.GenerateMeal(new VeganMeal());
+        // ketoMeal.Display();
+
+
+        // Problem 5
+        var resume1 = new Resume<SoftwareEngineer>(
+            new ResumeData
+            {
+                CandidateName = "Steve",
+                YearsOfExperience = 3,
+                Skills = new List<string> { "C#", "SQL" }
+            });
+
+        var resume2 = new Resume<DataScientist>(
+            new ResumeData
+            {
+                CandidateName = "Robin",
+                YearsOfExperience = 4,
+                Skills = new List<string> { "Java", "PostgresSQL" }
+            });
+
+        var softwareResumes =
+            new List<Resume<SoftwareEngineer>> { resume1 };
+
+        var dataScienceResumes =
+            new List<Resume<DataScientist>> { resume2 };
+
+        ResumeScreeningPipeline.ProcessResumes(softwareResumes);
+        ResumeScreeningPipeline.ProcessResumes(dataScienceResumes);
 
         Console.ReadKey();
     }
