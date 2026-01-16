@@ -75,23 +75,32 @@ class Program
 
 
         // Queue Interface
-        Queue<int> q = new Queue<int>();
-        q.Enqueue(10);
-        q.Enqueue(20);
-        q.Enqueue(30);
+        //Queue<int> q = new Queue<int>();
+        //q.Enqueue(10);
+        //q.Enqueue(20);
+        //q.Enqueue(30);
 
-        Console.WriteLine("Original Queue:");
-        foreach (var item in q)
-            Console.Write(item + " ");
-        Console.WriteLine();
+        //Console.WriteLine("Original Queue:");
+        //foreach (var item in q)
+        //    Console.Write(item + " ");
+        //Console.WriteLine();
 
-        QueueReverser reverser = new QueueReverser();
-        Queue<int> reversed = reverser.ReverseQueue(q);
+        //QueueReverser reverser = new QueueReverser();
+        //Queue<int> reversed = reverser.ReverseQueue(q);
 
-        Console.WriteLine("Reversed Queue:");
-        foreach (var item in reversed)
-            Console.Write(item + " ");
-        Console.WriteLine();
+        //Console.WriteLine("Reversed Queue:");
+        //foreach (var item in reversed)
+        //    Console.Write(item + " ");
+        //Console.WriteLine();
+
+        // Problem 3
+        HospitalTriage triage = new HospitalTriage();
+
+        triage.AddPatient("John", 3);
+        triage.AddPatient("Alice", 5);
+        triage.AddPatient("Bob", 2);
+
+        triage.TreatPatients();
 
 
 
