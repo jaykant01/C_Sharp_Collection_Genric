@@ -1,6 +1,6 @@
 ﻿using Online_Marketplace;
 using Course_Management;
-
+using Meal_Plan;
 class Program
 {
     static void Main(string[] args)
@@ -48,19 +48,26 @@ class Program
         // Console.WriteLine($"{shirt.Name} - {shirt.Price}");
 
         // Problem 3
-        Course<ExamCourse> examCourse = new Course<ExamCourse>();
-        examCourse.AddCourse(new ExamCourse("Data Structures"));
-        examCourse.AddCourse(new ExamCourse("Operating Systems"));
+        // Course<ExamCourse> examCourse = new Course<ExamCourse>();
+        // examCourse.AddCourse(new ExamCourse("Data Structures"));
+        // examCourse.AddCourse(new ExamCourse("Operating Systems"));
 
-        Course<AssignmentCourse> assignmentC = new Course<AssignmentCourse>();
-        assignmentC.AddCourse(new AssignmentCourse("Software Engineering"));
-        assignmentC.AddCourse(new AssignmentCourse("Web Development"));
+        // Course<AssignmentCourse> assignmentC = new Course<AssignmentCourse>();
+        // assignmentC.AddCourse(new AssignmentCourse("Software Engineering"));
+        // assignmentC.AddCourse(new AssignmentCourse("Web Development"));
 
-        Console.WriteLine("Exam Courses:");
-        examCourse.DisplayCourses();
+        // Console.WriteLine("Exam Courses:");
+        // examCourse.DisplayCourses();
 
-        Console.WriteLine("\nAssignment Courses:");
-        assignmentC.DisplayCourses();
+        // Console.WriteLine("\nAssignment Courses:");
+        // assignmentC.DisplayCourses();
+
+        // Problem 4
+        var vegMeal = MealGenerator.GenerateMeal(new VegetarianMeal());
+        vegMeal.Display();
+
+        var ketoMeal = MealGenerator.GenerateMeal(new VeganMeal());
+        ketoMeal.Display();
 
         Console.ReadKey();
     }
