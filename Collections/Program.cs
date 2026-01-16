@@ -64,14 +64,34 @@ class Program
 
 
         // Map Interface
-        WordFrequencyCounter counter = new WordFrequencyCounter();
+        //WordFrequencyCounter counter = new WordFrequencyCounter();
 
-        Dictionary<string, int> result = counter.CountWords();
+        //Dictionary<string, int> result = counter.CountWords();
 
-        foreach (var item in result)
-        {
-            Console.WriteLine(item.Key + " : " + item.Value);
-        }
+        //foreach (var item in result)
+        //{
+        //    Console.WriteLine(item.Key + " : " + item.Value);
+        //}
+
+
+        // Queue Interface
+        Queue<int> q = new Queue<int>();
+        q.Enqueue(10);
+        q.Enqueue(20);
+        q.Enqueue(30);
+
+        Console.WriteLine("Original Queue:");
+        foreach (var item in q)
+            Console.Write(item + " ");
+        Console.WriteLine();
+
+        QueueReverser reverser = new QueueReverser();
+        Queue<int> reversed = reverser.ReverseQueue(q);
+
+        Console.WriteLine("Reversed Queue:");
+        foreach (var item in reversed)
+            Console.Write(item + " ");
+        Console.WriteLine();
 
 
 
