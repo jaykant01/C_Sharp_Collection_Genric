@@ -57,8 +57,42 @@ class Program
         // Set Interface
 
         // Problem 1
-        CheckEqual checkEqual = new CheckEqual();
-        checkEqual.Equal();
+        //CheckEqual checkEqual = new CheckEqual();
+        //checkEqual.Equal();
+
+
+        // Insurance Policy
+        PolicyManager manager = new PolicyManager();
+
+        manager.AddPolicy(new InsurancePolicy
+        {
+            PolicyNumber = "P101",
+            CoverageType = "Health",
+            ExpiryDate = DateTime.Now.AddDays(10)
+        });
+
+        manager.AddPolicy(new InsurancePolicy
+        {
+            PolicyNumber = "P102",
+            CoverageType = "Life",
+            ExpiryDate = DateTime.Now.AddDays(40)
+        });
+
+        manager.AddPolicy(new InsurancePolicy
+        {
+            PolicyNumber = "P103",
+            CoverageType = "Vehicle",
+            ExpiryDate = DateTime.Now.AddDays(20)
+        });
+
+        Console.WriteLine("All Policies:");
+        manager.ShowAllPolicies();
+
+        Console.WriteLine("\nExpiring in 30 Days:");
+        manager.ShowExpiringSoon();
+
+        Console.WriteLine("\nHealth Policies:");
+        manager.ShowByCoverage("Health");
 
 
         Console.ReadKey();
