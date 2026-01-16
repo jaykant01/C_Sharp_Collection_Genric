@@ -1,6 +1,5 @@
-﻿
-using Online_Marketplace;
-
+﻿using Online_Marketplace;
+using Course_Management;
 
 class Program
 {
@@ -37,16 +36,31 @@ class Program
         // frStorage.DisplayAllItems();
 
 
-        // Problem 
-        var book = new Product<BookCategory>("c#", 500, new BookCategory());
+        // Problem 2
+        // var book = new Product<BookCategory>("c#", 500, new BookCategory());
 
-        var shirt = new Product<ClothingCategory>("Nike", 15500, new ClothingCategory());
+        // var shirt = new Product<ClothingCategory>("Nike", 15500, new ClothingCategory());
 
-        DiscountService.ApplyDiscount(book, 10);
-        DiscountService.ApplyDiscount(shirt, 20);
+        // DiscountService.ApplyDiscount(book, 10);
+        // DiscountService.ApplyDiscount(shirt, 20);
 
-        Console.WriteLine($"{book.Name} - {book.Price}");
-        Console.WriteLine($"{shirt.Name} - {shirt.Price}");
+        // Console.WriteLine($"{book.Name} - {book.Price}");
+        // Console.WriteLine($"{shirt.Name} - {shirt.Price}");
+
+        // Problem 3
+        Course<ExamCourse> examCourse = new Course<ExamCourse>();
+        examCourse.AddCourse(new ExamCourse("Data Structures"));
+        examCourse.AddCourse(new ExamCourse("Operating Systems"));
+
+        Course<AssignmentCourse> assignmentC = new Course<AssignmentCourse>();
+        assignmentC.AddCourse(new AssignmentCourse("Software Engineering"));
+        assignmentC.AddCourse(new AssignmentCourse("Web Development"));
+
+        Console.WriteLine("Exam Courses:");
+        examCourse.DisplayCourses();
+
+        Console.WriteLine("\nAssignment Courses:");
+        assignmentC.DisplayCourses();
 
         Console.ReadKey();
     }
