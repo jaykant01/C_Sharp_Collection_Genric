@@ -1,6 +1,9 @@
 # Visual Studio
 .vs/
 
+# Vs Code
+.vscode
+
 # Build results
 bin/
 obj/
