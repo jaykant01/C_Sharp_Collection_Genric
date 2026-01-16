@@ -62,37 +62,51 @@ class Program
 
 
         // Insurance Policy
-        PolicyManager manager = new PolicyManager();
+        //PolicyManager manager = new PolicyManager();
 
-        manager.AddPolicy(new InsurancePolicy
-        {
-            PolicyNumber = "P101",
-            CoverageType = "Health",
-            ExpiryDate = DateTime.Now.AddDays(10)
-        });
+        //manager.AddPolicy(new InsurancePolicy
+        //{
+        //    PolicyNumber = "P101",
+        //    CoverageType = "Health",
+        //    ExpiryDate = DateTime.Now.AddDays(10)
+        //});
 
-        manager.AddPolicy(new InsurancePolicy
-        {
-            PolicyNumber = "P102",
-            CoverageType = "Life",
-            ExpiryDate = DateTime.Now.AddDays(40)
-        });
+        //manager.AddPolicy(new InsurancePolicy
+        //{
+        //    PolicyNumber = "P102",
+        //    CoverageType = "Life",
+        //    ExpiryDate = DateTime.Now.AddDays(40)
+        //});
 
-        manager.AddPolicy(new InsurancePolicy
-        {
-            PolicyNumber = "P103",
-            CoverageType = "Vehicle",
-            ExpiryDate = DateTime.Now.AddDays(20)
-        });
+        //manager.AddPolicy(new InsurancePolicy
+        //{
+        //    PolicyNumber = "P103",
+        //    CoverageType = "Vehicle",
+        //    ExpiryDate = DateTime.Now.AddDays(20)
+        //});
 
-        Console.WriteLine("All Policies:");
-        manager.ShowAllPolicies();
+        //Console.WriteLine("All Policies:");
+        //manager.ShowAllPolicies();
 
-        Console.WriteLine("\nExpiring in 30 Days:");
-        manager.ShowExpiringSoon();
+        //Console.WriteLine("\nExpiring in 30 Days:");
+        //manager.ShowExpiringSoon();
 
-        Console.WriteLine("\nHealth Policies:");
-        manager.ShowByCoverage("Health");
+        //Console.WriteLine("\nHealth Policies:");
+        //manager.ShowByCoverage("Health");
+
+
+        // Problem Voting System
+        VotingSystem voting = new VotingSystem();
+
+        voting.CastVote("Alice");
+        voting.CastVote("Bob");
+        voting.CastVote("Alice");
+        voting.CastVote("Charlie");
+        voting.CastVote("Bob");
+
+        voting.ShowVoteOrder();
+        Console.WriteLine();
+        voting.ShowSortedResults();
 
 
         Console.ReadKey();
