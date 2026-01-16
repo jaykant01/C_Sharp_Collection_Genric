@@ -96,17 +96,29 @@ class Program
 
 
         // Problem Voting System
-        VotingSystem voting = new VotingSystem();
+        //VotingSystem voting = new VotingSystem();
 
-        voting.CastVote("Alice");
-        voting.CastVote("Bob");
-        voting.CastVote("Alice");
-        voting.CastVote("Charlie");
-        voting.CastVote("Bob");
+        //voting.CastVote("Alice");
+        //voting.CastVote("Bob");
+        //voting.CastVote("Alice");
+        //voting.CastVote("Charlie");
+        //voting.CastVote("Bob");
 
-        voting.ShowVoteOrder();
+        //voting.ShowVoteOrder();
+        //Console.WriteLine();
+        //voting.ShowSortedResults();
+
+        // Problem Shopping Cart
+        ShoppingCart cart = new ShoppingCart();
+
+        cart.AddProduct("Laptop", 55000);
+        cart.AddProduct("Mouse", 500);
+        cart.AddProduct("Keyboard", 1500);
+        cart.AddProduct("Headphones", 2500);
+
+        cart.ShowCart();
         Console.WriteLine();
-        voting.ShowSortedResults();
+        cart.ShowSortedByPrice();
 
 
         Console.ReadKey();
