@@ -1,5 +1,6 @@
 ﻿using Student;
 using EmployeeLeave;
+using DriverSystem;
 class Program
 {
     static void Main(string[] args)
@@ -21,25 +22,39 @@ class Program
         // analyzer.DisplayAllStudents();
 
         // Problem 3
-        LeaveManager manager = new LeaveManager();
+        // LeaveManager manager = new LeaveManager();
 
-        // Holidays
-        manager.AddHoliday(new DateTime(2025, 1, 1));
-        manager.AddHoliday(new DateTime(2025, 12, 25));
+        // // Holidays
+        // manager.AddHoliday(new DateTime(2025, 1, 1));
+        // manager.AddHoliday(new DateTime(2025, 12, 25));
 
-        // Leave applications
-        manager.ApplyLeave(101, new Leave(
-            new DateTime(2025, 1, 2),
-            new DateTime(2025, 1, 3)));
+        // // Leave applications
+        // manager.ApplyLeave(101, new Leave(
+        //     new DateTime(2025, 1, 2),
+        //     new DateTime(2025, 1, 3)));
 
-        manager.ApplyLeave(101, new Leave(
-            new DateTime(2025, 1, 3),
-            new DateTime(2025, 1, 4))); // back-to-back
+        // manager.ApplyLeave(101, new Leave(
+        //     new DateTime(2025, 1, 3),
+        //     new DateTime(2025, 1, 4))); 
 
-        manager.ApplyLeave(101, new Leave(
-            new DateTime(2025, 12, 31),
-            new DateTime(2026, 1, 1))); // year-end & holiday
+        // manager.ApplyLeave(101, new Leave(
+        //     new DateTime(2025, 12, 31),
+        //     new DateTime(2026, 1, 1))); 
 
-        manager.GenerateLeaveReport(101);
+        // manager.GenerateLeaveReport(101);
+
+        // Problem 5
+        CabAssignmentManager manager = new CabAssignmentManager();
+
+        manager.AddDriver(new Driver(1, "Ravi", 2.5, 4.6));
+        manager.AddDriver(new Driver(2, "Amit", 2.5, 4.8));
+        manager.AddDriver(new Driver(3, "Neha", 3.0, 4.9));
+
+        Driver assigned = manager.AssignDriver();
+
+        manager.CancelRide(assigned);
+        manager.AssignDriver();
+
+        manager.DisplayDrivers();
     }
 }
