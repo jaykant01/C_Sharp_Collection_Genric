@@ -4,6 +4,7 @@ using DriverSystem;
 using Library;
 using Inventory;
 using Shopping;
+using Bank;
 class Program
 {
     static void Main(string[] args)
@@ -97,16 +98,36 @@ class Program
 
 
         // Problem 2
-        ShoppingCart cart = new ShoppingCart();
+        // ShoppingCart cart = new ShoppingCart();
 
-        cart.AddOffer(new Offer("Buy 2 Get 1"));
-        cart.AddOffer(new Offer("10% Discount"));
-        cart.AddOffer(new Offer("Free Delivery"));
+        // cart.AddOffer(new Offer("Buy 2 Get 1"));
+        // cart.AddOffer(new Offer("10% Discount"));
+        // cart.AddOffer(new Offer("Free Delivery"));
 
-        cart.AddItem(new CartItem(1, "Shoes", 2000, 3));
-        cart.AddItem(new CartItem(2, "Bag", 1500, 2));
+        // cart.AddItem(new CartItem(1, "Shoes", 2000, 3));
+        // cart.AddItem(new CartItem(2, "Bag", 1500, 2));
 
-        cart.Checkout();
+        // cart.Checkout();
+
+
+        // Problem 4
+        FraudDetector detector = new FraudDetector();
+
+        detector.AddAccount(1001, 10000);
+
+        detector.ProcessTransaction(1001,
+            new Transaction(DateTime.Now, 2000, "WITHDRAW"));
+
+        detector.ProcessTransaction(1001,
+            new Transaction(DateTime.Now.AddMinutes(2), 1500, "WITHDRAW"));
+
+        detector.ProcessTransaction(1001,
+            new Transaction(DateTime.Now.AddMinutes(4), 1000, "WITHDRAW"));
+
+        detector.ProcessTransaction(1001,
+            new Transaction(DateTime.Now.AddMinutes(6), 900, "WITHDRAW"));
+
+        detector.GenerateSuspiciousReport();
 
 
     }
