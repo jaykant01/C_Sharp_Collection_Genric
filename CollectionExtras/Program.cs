@@ -1,6 +1,7 @@
 ﻿using Student;
 using EmployeeLeave;
 using DriverSystem;
+using Library;
 class Program
 {
     static void Main(string[] args)
@@ -44,17 +45,39 @@ class Program
         // manager.GenerateLeaveReport(101);
 
         // Problem 5
-        CabAssignmentManager manager = new CabAssignmentManager();
+        // CabAssignmentManager manager = new CabAssignmentManager();
 
-        manager.AddDriver(new Driver(1, "Ravi", 2.5, 4.6));
-        manager.AddDriver(new Driver(2, "Amit", 2.5, 4.8));
-        manager.AddDriver(new Driver(3, "Neha", 3.0, 4.9));
+        // manager.AddDriver(new Driver(1, "Ravi", 2.5, 4.6));
+        // manager.AddDriver(new Driver(2, "Amit", 2.5, 4.8));
+        // manager.AddDriver(new Driver(3, "Neha", 3.0, 4.9));
 
-        Driver assigned = manager.AssignDriver();
+        // Driver assigned = manager.AssignDriver();
 
-        manager.CancelRide(assigned);
-        manager.AssignDriver();
+        // manager.CancelRide(assigned);
+        // manager.AssignDriver();
 
-        manager.DisplayDrivers();
+        // manager.DisplayDrivers();
+
+        // Problem 7
+        LibraryFineCalculator calculator = new LibraryFineCalculator();
+
+        calculator.AddRecord(1, new IssueRecord(
+            "C#",
+            new DateTime(2025, 1, 5),
+            new DateTime(2025, 1, 15)));
+
+        calculator.AddRecord(1, new IssueRecord(
+            "DSA",
+            new DateTime(2025, 1, 10),
+            new DateTime(2025, 1, 20)));
+
+        calculator.AddRecord(2, new IssueRecord(
+            "DBMS",
+            new DateTime(2025, 1, 1),
+            new DateTime(2025, 1, 7))); // Sunday return
+
+        calculator.GenerateMonthlyReport(1, 2025);
+        calculator.DisplayFrequentDefaulters();
+
     }
 }
