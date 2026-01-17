@@ -2,6 +2,7 @@
 using EmployeeLeave;
 using DriverSystem;
 using Library;
+using Inventory;
 class Program
 {
     static void Main(string[] args)
@@ -59,25 +60,39 @@ class Program
         // manager.DisplayDrivers();
 
         // Problem 7
-        LibraryFineCalculator calculator = new LibraryFineCalculator();
+        // LibraryFineCalculator calculator = new LibraryFineCalculator();
 
-        calculator.AddRecord(1, new IssueRecord(
-            "C#",
-            new DateTime(2025, 1, 5),
-            new DateTime(2025, 1, 15)));
+        // calculator.AddRecord(1, new IssueRecord(
+        //     "C#",
+        //     new DateTime(2025, 1, 5),
+        //     new DateTime(2025, 1, 15)));
 
-        calculator.AddRecord(1, new IssueRecord(
-            "DSA",
-            new DateTime(2025, 1, 10),
-            new DateTime(2025, 1, 20)));
+        // calculator.AddRecord(1, new IssueRecord(
+        //     "DSA",
+        //     new DateTime(2025, 1, 10),
+        //     new DateTime(2025, 1, 20)));
 
-        calculator.AddRecord(2, new IssueRecord(
-            "DBMS",
-            new DateTime(2025, 1, 1),
-            new DateTime(2025, 1, 7))); // Sunday return
+        // calculator.AddRecord(2, new IssueRecord(
+        //     "DBMS",
+        //     new DateTime(2025, 1, 1),
+        //     new DateTime(2025, 1, 7))); 
 
-        calculator.GenerateMonthlyReport(1, 2025);
-        calculator.DisplayFrequentDefaulters();
+        // calculator.GenerateMonthlyReport(1, 2025);
+        // calculator.DisplayFrequentDefaulters();
+
+
+        // Problem 9
+        InventoryReorderPredictor predictor = new InventoryReorderPredictor();
+
+        predictor.AddItem(new InventoryItem("Laptop", 20));
+
+        predictor.AddDailySale("Laptop", 3);
+        predictor.AddDailySale("Laptop", 4);
+        predictor.AddDailySale("Laptop", 0);
+        predictor.AddDailySale("Laptop", 5);
+
+        predictor.CheckReorder("Laptop");
+        predictor.PredictStockOut("Laptop");
 
     }
 }
