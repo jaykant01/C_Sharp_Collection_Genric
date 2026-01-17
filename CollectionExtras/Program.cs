@@ -3,6 +3,7 @@ using EmployeeLeave;
 using DriverSystem;
 using Library;
 using Inventory;
+using Shopping;
 class Program
 {
     static void Main(string[] args)
@@ -82,17 +83,31 @@ class Program
 
 
         // Problem 9
-        InventoryReorderPredictor predictor = new InventoryReorderPredictor();
+        // InventoryReorderPredictor predictor = new InventoryReorderPredictor();
 
-        predictor.AddItem(new InventoryItem("Laptop", 20));
+        // predictor.AddItem(new InventoryItem("Laptop", 20));
 
-        predictor.AddDailySale("Laptop", 3);
-        predictor.AddDailySale("Laptop", 4);
-        predictor.AddDailySale("Laptop", 0);
-        predictor.AddDailySale("Laptop", 5);
+        // predictor.AddDailySale("Laptop", 3);
+        // predictor.AddDailySale("Laptop", 4);
+        // predictor.AddDailySale("Laptop", 0);
+        // predictor.AddDailySale("Laptop", 5);
 
-        predictor.CheckReorder("Laptop");
-        predictor.PredictStockOut("Laptop");
+        // predictor.CheckReorder("Laptop");
+        // predictor.PredictStockOut("Laptop");
+
+
+        // Problem 2
+        ShoppingCart cart = new ShoppingCart();
+
+        cart.AddOffer(new Offer("Buy 2 Get 1"));
+        cart.AddOffer(new Offer("10% Discount"));
+        cart.AddOffer(new Offer("Free Delivery"));
+
+        cart.AddItem(new CartItem(1, "Shoes", 2000, 3));
+        cart.AddItem(new CartItem(2, "Bag", 1500, 2));
+
+        cart.Checkout();
+
 
     }
 }
